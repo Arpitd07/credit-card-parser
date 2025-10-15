@@ -10,9 +10,9 @@ pdf_path = sys.argv[1]
 BANK_PATTERNS = {
     "HDFC Bank": {
         "Last_4_digits": r"(?:XXXX|\*{4}|XXXX-)\s*(\d{4})",
-        "Billing_cycle": r"Statement\s*Date\s*[:\-]?\s*(\d{1,2}(?:/|-|\s)(?:\d{1,2}|\w{3})/|\s\d{4})\s*[-to–—]+\s*(\d{1,2}(?:/|-|\s)(?:\d{1,2}|\w{3})/|\s\d{4})",
-        "Payment_due_date": r"Payment\s*Due\s*Date\s*[:\-]?\s*(\d{1,2}(?:/|-|\s)(?:\d{1,2}|\w{3})/|\s\d{4})",
-        "Total_outstanding_balance": r"Total\s*(?:Due|Dues|Amount\s*Due)\s*[:\-]?\s*(?:INR|Rs\.|₹)?\s*([\d,]+\.\d{2})"
+        "Billing_cycle": r"Statement\s*Period\s*(?:[:\-]?\s*)?(\d{1,2}[/-]\d{1,2}[/-]\d{4}|\d{1,2}\s(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d{4})\s*[-to–—]+\s*(\d{1,2}[/-]\d{1,2}[/-]\d{4}|\d{1,2}\s(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d{4})",
+        "Payment_due_date": r"Payment\s*Due\s*Date\s*(?:[:\-]?\s*)?(\d{1,2}[/-]\d{1,2}[/-]\d{4}|\d{1,2}\s(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d{4})",
+        "Total_outstanding_balance": r"Total\s*(?:Due|Dues|Amount\s*Due)\s*(?:[:\-]?\s*)?(?:INR|Rs\.|₹)?\s*([\d,]+\.\d{2})"
     },
     "ICICI Bank": {
         "Last_4_digits": r"(?:XXXX|\*{4}|XXXX-)\s*(\d{4})",
@@ -32,11 +32,11 @@ BANK_PATTERNS = {
         "Payment_due_date": r"Payment\s*Due\s*Date\s*[:\-]?\s*(\d{1,2}(?:/|-|\s)(?:\d{1,2}|\w{3})\s?\d{4})",
         "Total_outstanding_balance": r"Amount\s*Due\s*[:\-]?\s*(?:INR|₹)?\s*([\d,]+\.\d{2})"
     },
-    "Canara Bank": {
-        "Last_4_digits": r"(?:XXXX|\*{4}|XXXX-)\s*(\d{4})",
-        "Billing_cycle": r"Billing\s*Period\s*[:\-]?\s*(\d{1,2}(?:/|-|\s)(?:\d{1,2}|\w{3})\s?\d{4})\s*[-to–—]+\s*(\d{1,2}(?:/|-|\s)(?:\d{1,2}|\w{3})\s?\d{4})",
+    "Kotak Mahindra Bank": {
+        "Last_4_digits": r"(?:XXXX|\*{4}|XXXX-)\s*(\d{4})\s*",
+        "Billing_cycle": r"Statement\s*Period\s*(?:[:\-]?\s*)?(\d{1,2}[/-]\d{1,2}[/-]\d{4}|\d{1,2}\s(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d{4})\s*[-to–—]+\s*(\d{1,2}[/-]\d{1,2}[/-]\d{4}|\d{1,2}\s(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d{4})",
         "Payment_due_date": r"Payment\s*Due\s*Date\s*[:\-]?\s*(\d{1,2}(?:/|-|\s)(?:\d{1,2}|\w{3})\s?\d{4})",
-        "Total_outstanding_balance": r"Outstanding\s*Amount\s*[:\-]?\s*(?:INR|₹)?\s*([\d,]+\.\d{2})"
+        "Total_outstanding_balance": r"Statement\s*Balance\s*[:\-]?\s*(?:INR|₹)?\s*([\d,]+\.\d{2})"
     }
 }
 
