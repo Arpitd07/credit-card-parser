@@ -45,7 +45,7 @@ A **Python + React** application that extracts key details from credit card stat
 1. Clone the repository:
 
 ```bash
-git clone <your-repo-url>
+git clone <repo-url>
 cd credit-card-parser
 ````
 
@@ -157,7 +157,7 @@ credit-card-parser/
 │   │   └── App.jsx
 │   └── package.json
 │
-└── uploads/ (optional folder for storing uploaded PDFs)
+└── uploads/ (folder for storing uploaded PDFs)
 ```
 
 ---
