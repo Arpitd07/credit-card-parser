@@ -11,7 +11,7 @@ A **Python + React** application that extracts key details from credit card stat
   - ICICI Bank
   - SBI Card
   - Axis Bank
-  - Canara Bank
+  - Kotak Mahindra Bank
 - Extracts the following details:
   - Last 4 digits of the card
   - Billing cycle (start and end date)
