@@ -9,12 +9,10 @@ import { fileURLToPath } from "url";
 const app = express();
 app.use(cors());
 
-// Get correct absolute paths (fix for pdfs folder issue)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const uploadDir = path.resolve(__dirname, "../pdfs");
 
-// Create pdfs folder in main directory if it doesn’t exist
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
@@ -84,6 +82,5 @@ app.post("/upload", upload.single("file"), (req, res) => {
   }
 });
 
-// Start server
 const PORT = 5000;
 app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));

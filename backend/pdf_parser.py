@@ -80,7 +80,6 @@ def extract_fields(text, bank):
     for field, pattern in patterns.items():
         match = re.search(pattern, text, re.IGNORECASE)
         if match:
-            # Some regexes have multiple capturing groups; pick the first non-empty
             result[field] = next((g for g in match.groups() if g), "")
         else:
             result[field] = ""
